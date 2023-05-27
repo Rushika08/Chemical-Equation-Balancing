@@ -10,13 +10,16 @@ int main()
 	cout<<"Enter the number of Hydrogen (H) atoms in the Hydro-Carbon - ";
 	cin>>h;
 	
+	//Calculating the factors
 	ch = 1;
 	h2o = h/2;
 	co2 = c;
 	o2 = (2*co2 + h2o)/2;
 	
+	//Checking whether the factor of O2 is in fraction format
 	int check_o2 = static_cast<int>(o2);
 	
+	//Then multiplying all the factors by 2 to avoid fractions
 	if(o2 != check_o2)
 	{
 		ch *= 2;

@@ -1,32 +1,32 @@
-# Prerequisites
-*.d
+#include <iostream>
+using namespace std;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+int main()
+{
+	float c, h, o;
+	float ch, h2o, o2, co2;
+	cout<<"Enter the number of Carbon (C) atoms in the Hydro-Carbon - ";
+	cin>>c;
+	cout<<"Enter the number of Hydrogen (H) atoms in the Hydro-Carbon - ";
+	cin>>h;
+	
+	ch = 1;
+	h2o = h/2;
+	co2 = c;
+	o2 = (2*co2 + h2o)/2;
+	
+	int check_o2 = static_cast<int>(o2);
+	
+	if(o2 != check_o2)
+	{
+		ch *= 2;
+		co2 *= 2;
+		o2 *= 2;
+		h2o *= 2;
+	}
+	
+	cout<<" The balanced equation is, \n";
+	cout<<"\n\t\t "<<ch<<" [C"<<c<<"H"<<h<<"]+ "<<o2<<" [O2]  =  "<<h2o<<" [H2O] + "<<co2<<" [CO2]";
+	
+	return 0;
+}
